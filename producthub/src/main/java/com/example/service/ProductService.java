@@ -24,7 +24,7 @@ public class ProductService {
 	@Autowired
 	private CategoryRepository categoryRepository;
 
-	@JsonView(Views.ProductSummary.class)
+
 	public Page<Product> getAllProducts(Pageable pageable) {
 		return productRepository.findAll(pageable);
 	}
@@ -37,7 +37,7 @@ public class ProductService {
 		return productRepository.save(product);
 	}
 
-	@JsonView(Views.ProductDetail.class)
+	
 	public Product getProductById(int id) {
 
 		return productRepository.findById(id)
